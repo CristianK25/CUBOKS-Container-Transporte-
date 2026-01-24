@@ -1,0 +1,20 @@
+/* El contenedor del texto */
+.logo-text {
+    font-family: var(--font-heading); /* Usamos la fuente fuerte (Oswald/Bebas) */
+    font-weight: 800; /* Bien grueso */
+    font-size: 1.8rem; /* Tamaño prominente */
+    color: #8ee3c3; /* Color verde solicitado */
+    text-transform: uppercase; /* Mayúsculas industriales */
+    text-decoration: none; /* Quitamos el subrayado de enlace */
+    letter-spacing: 2px; /* Un poco de aire entre letras */
+    display: flex;
+    align-items: center;
+}
+
+/* Opcional: El punto de acento */
+.logo-dot {
+    color: #8ee3c3; /* Color verde solicitado */
+    font-size: 2.5rem; /* Un poco más grande para destacar */
+    line-height: 0; /* Para que no afecte la altura del navbar */
+    margin-left: 2px;
+}

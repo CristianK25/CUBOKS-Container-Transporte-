@@ -3,6 +3,7 @@
 @import 'variables.css';
 
 /* Components */
+@import 'components/logo.css';
 @import 'components/navbar.css';
 @import 'components/hero.css';
 @import 'components/services.css';
