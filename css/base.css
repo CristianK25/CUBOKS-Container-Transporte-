@@ -8,7 +8,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+    font-family: var(--font-main, system-ui, sans-serif);
     line-height: 1.6;
     
     /* Aplicando el color de fondo solicitado y color de texto base */
@@ -20,4 +20,15 @@ html, body {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+/* Ensure buttons and inputs inherit font */
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
 }

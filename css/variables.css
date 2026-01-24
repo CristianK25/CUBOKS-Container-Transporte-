@@ -8,6 +8,8 @@
     --accent-color: #00ff88; /* Verde neón placeholder, ajustable */
     
     /* Tipografía */
-    --font-heading: system-ui, -apple-system, sans-serif;
-    --font-body: system-ui, -apple-system, sans-serif;
+    /* Tipografía */
+    --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-heading: var(--font-main);
+    --font-body: var(--font-main);
 }
