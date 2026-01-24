@@ -20,13 +20,18 @@
     padding: 1.5rem 5%; /* Espaciado generoso */
     
     /* Transición suave para cuando se ponga sólido al bajar */
-    transition: background-color 0.4s ease, padding 0.4s ease;
+    /* Transición suave para cuando se ponga sólido al bajar */
+    transition: background-color 0.5s ease, backdrop-filter 0.5s ease, padding 0.5s ease;
 }
 
 /* --- ESTADO "SCROLLED" (Lo activaremos con JS) --- */
 /* Cuando bajamos, se pone oscuro y se achica un poco */
 .navbar.scrolled {
-    background-color: var(--bg-body); /* Tu azul oscuro o negro */
+    /* Glassmorphism Effect */
+    background-color: color-mix(in srgb, var(--bg-body, #111525), transparent 15%); /* Opacidad del 85% */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
     box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombrita sutil */
     padding: 1rem 5%; /* Se hace más compacto */
 }

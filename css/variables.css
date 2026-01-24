@@ -2,6 +2,7 @@
     /* Paleta de Colores Principal */
     --bg-primary: #111525;
     --text-primary: #8ee3c3;
+    --bg-body: var(--bg-primary);
     --text-secondary: #a0a0a0;
     
     /* Acentos (Basado en Instrucciones) */
