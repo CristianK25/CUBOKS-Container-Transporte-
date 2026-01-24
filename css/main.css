@@ -7,4 +7,7 @@
 @import 'components/navbar.css';
 @import 'components/hero.css';
 @import 'components/services.css';
+
+/* Layout */
+@import 'layout/structure.css';
 /* Add other components as needed */

@@ -13,4 +13,9 @@
     --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-heading: var(--font-main);
     --font-body: var(--font-main);
+
+    /* Layout & Spacing */
+    --container-width: 1200px;
+    --gutter: 1.5rem; /* Margen mínimo a los lados en móviles */
+    --section-spacing: 4rem; /* Espaciado vertical entre secciones */
 }

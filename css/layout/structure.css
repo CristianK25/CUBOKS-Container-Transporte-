@@ -1,0 +1,18 @@
+/* Estructura Full-Width con Contenido Centrado */
+main > section:not(.hero) {
+    width: 100%;
+    max-width: 100%; /* Permitimos que la caja ocupe toda la pantalla */
+    margin: 0;       /* Eliminamos el margin auto */
+    
+    /* CENTRADO MÁGICO:
+       1. padding-block: Espacio arriba y abajo.
+       2. padding-inline: Calcula el espacio lateral dinámicamente.
+          - Si la pantalla es ancha: (100% - 1200px) / 2 = Espacio igual a ambos lados.
+          - Si la pantalla es angosta: Usa var(--gutter) como mínimo.
+    */
+    padding-block: var(--section-spacing, 4rem);
+    padding-inline: max(var(--gutter, 1.5rem), (100% - var(--container-width)) / 2);
+    
+    /* Asegura que el padding no expanda el ancho total más allá del 100% */
+    box-sizing: border-box;
+}
