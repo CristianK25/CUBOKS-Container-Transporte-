@@ -1,0 +1,32 @@
+/* css/components/navbar.css */
+
+.navbar {
+    /* 1. FLOTAR ENCIMA */
+    position: fixed; /* Se queda pegado arriba aunque scrollees */
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* 2. CAPA SUPERIOR */
+    z-index: 1000; /* Un número alto para estar seguro que va encima de todo */
+    
+    /* 3. TRANSPARENCIA INICIAL */
+    background-color: transparent; 
+    
+    /* Estilos extra de layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%; /* Espaciado generoso */
+    
+    /* Transición suave para cuando se ponga sólido al bajar */
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+/* --- ESTADO "SCROLLED" (Lo activaremos con JS) --- */
+/* Cuando bajamos, se pone oscuro y se achica un poco */
+.navbar.scrolled {
+    background-color: var(--bg-body); /* Tu azul oscuro o negro */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3); /* Sombrita sutil */
+    padding: 1rem 5%; /* Se hace más compacto */
+}

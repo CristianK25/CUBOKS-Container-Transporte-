@@ -1,0 +1,13 @@
+:root {
+    /* Paleta de Colores Principal */
+    --bg-primary: #111525;
+    --text-primary: #8ee3c3;
+    --text-secondary: #a0a0a0;
+    
+    /* Acentos (Basado en Instrucciones) */
+    --accent-color: #00ff88; /* Verde neón placeholder, ajustable */
+    
+    /* Tipografía */
+    --font-heading: system-ui, -apple-system, sans-serif;
+    --font-body: system-ui, -apple-system, sans-serif;
+}
