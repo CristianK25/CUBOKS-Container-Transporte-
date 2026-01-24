@@ -30,3 +30,6 @@ yarn-error.log*
 *.swp
 *.swo
 Thumbs.db
+
+#Otros
+*.md

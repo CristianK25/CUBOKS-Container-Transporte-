@@ -1,0 +1,9 @@
+@import 'base.css';
+/* Variables should be imported here if used */
+/* @import 'variables.css'; */
+
+/* Components */
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/services.css';
+/* Add other components as needed */
