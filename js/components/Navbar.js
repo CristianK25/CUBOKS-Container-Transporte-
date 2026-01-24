@@ -3,16 +3,28 @@
 export const initNavbar = () => {
     const navbar = document.querySelector('.navbar');
 
-    // Escuchamos el evento de scroll
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            // Si bajamos más de 50px, agregamos la clase .scrolled
-            navbar.classList.add('scrolled');
-        } else {
-            // Si volvemos arriba, quitamos la clase (vuelve a transparente)
-            navbar.classList.remove('scrolled');
-        }
-    });
+    const hero = document.querySelector('.hero');
+
+    const observerOptions = {
+        root: null,
+        threshold: [0, 0.15] // Detectamos cuando cruza 15% y cuando llega a 0%
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Si el índice de intersección es 0.15 o menos (casi fuera o fuera)
+            // activamos la clase .scrolled
+            if (entry.intersectionRatio <= 0.15) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }, observerOptions);
+
+    if (hero) {
+        observer.observe(hero);
+    }
 
     // ... aquí iría tu lógica del menú hamburguesa ...
 };
