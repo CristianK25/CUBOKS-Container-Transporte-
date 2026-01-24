@@ -1,0 +1,28 @@
+/* En css/components/features.css */
+
+.image-content img {
+    /* 1. Definir el tamaño */
+    width: 50%;  /* Reducido a la mitad del ancho de su columna */
+    height: auto; /* Resetear altura por si acaso */
+    
+    /* 2. FORZAR EL CUADRADO (La clave) */
+    /* Esto asegura que la altura siempre sea igual al ancho (relación 1:1) */
+    aspect-ratio: 1 / 1;
+
+    /* 3. EVITAR DEFORMACIÓN (El recorte mágico) */
+    /* 'cover' hace que la imagen llene el cuadrado sin estirarse, 
+       recortando lo que sobre de los lados automáticamente. */
+    object-fit: cover;
+    /* Opcional: asegurar que se centre el recorte */
+    object-position: center center;
+
+    /* 4. REDONDEADO */
+    /* Para un look "Industrial suave", entre 8px y 16px suele quedar bien */
+    border-radius: 12px;
+
+    /* Opcional: Una sombra suave para que la imagen "salte" del fondo */
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.3);
+    
+    /* Opcional: Un borde sutil si el fondo es muy oscuro */
+    border: 1px solid rgba(255,255,255,0.1);
+}
