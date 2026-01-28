@@ -1,0 +1,63 @@
+/* Sección Filosofía */
+
+/* Split Row Layout */
+.split-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 4rem;
+}
+
+/* Primer div: imagen a la izquierda, texto a la derecha */
+.split-row .image-content {
+    order: 1;
+    flex: 1;
+}
+
+.split-row .text-content {
+    order: 2;
+    flex: 1;
+}
+
+/* Segundo div (reverse): imagen a la derecha, texto a la izquierda */
+.split-row.reverse .image-content {
+    order: 2;
+}
+
+.split-row.reverse .text-content {
+    order: 1;
+}
+
+/* Estilos para las imágenes */
+.split-row .image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Estilos para el contenido de texto */
+.split-row .text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary, #8ee3c3);
+}
+
+.split-row .text-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary, #a0a0a0);
+}
+
+/* Responsive: en pantallas pequeñas, apilar verticalmente */
+@media (max-width: 768px) {
+    .split-row {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .split-row .image-content,
+    .split-row .text-content {
+        order: unset !important;
+    }
+}

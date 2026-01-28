@@ -1,0 +1,50 @@
+/* Sección Especificaciones Técnicas */
+.specs {
+    text-align: center;
+}
+
+.specs h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary, #8ee3c3);
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: var(--container-width, 1200px);
+    margin: 0 auto;
+}
+
+.spec-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(142, 227, 195, 0.2);
+}
+
+.spec-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.spec-card h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 1rem 0.5rem;
+    color: var(--text-primary, #8ee3c3);
+}
+
+.spec-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 1rem 1.5rem;
+    color: var(--text-secondary, #a0a0a0);
+}

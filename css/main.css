@@ -2,12 +2,19 @@
 /* Variables should be imported here if used */
 @import 'variables.css';
 
-/* Components */
+/* Base Components (Navbar, Hero, Footer) */
 @import 'components/logo.css';
 @import 'components/navbar.css';
 @import 'components/hero.css';
-@import 'components/services.css';
-@import 'components/features.css';
+@import 'components/footer.css';
+
+/* Section-Specific Styles */
+@import 'components/sections/filosofy.css';
+@import 'components/sections/benefits.css';
+@import 'components/sections/specs.css';
+@import 'components/sections/models.css';
+@import 'components/sections/faq.css';
+@import 'components/sections/cta.css';
 
 /* Layout */
 @import 'layout/structure.css';
