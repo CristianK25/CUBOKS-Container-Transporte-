@@ -1,8 +1,12 @@
 /* ============================================
-   KEYFRAMES LIBRARY
+   ANIMACIONES ESPECÍFICAS POR SECCIÓN
    ============================================ */
 
-/* Animación de fade-in desde abajo */
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+/* Keyframe para fade-in desde abajo */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -14,7 +18,25 @@
     }
 }
 
-/* Animación de navbar bajando desde arriba */
+/* El h1 del hero aparece primero */
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* El p del hero aparece después del h1 */
+.hero-content p {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+/* Keyframe para navbar bajando desde arriba */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -26,246 +48,41 @@
     }
 }
 
-/* ============================================
-   ANIMACIONES PARA EL HERO
-   ============================================ */
-
-/* El h1 aparece primero */
-.hero-content h1 {
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 0.5s; /* Empieza después de 0.5s */
-}
-
-/* El p aparece después del h1 */
-.hero-content p {
-    opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
-    animation-delay: 1.5s; /* Empieza después de 1.5s (0.5s + 1s de delay adicional) */
-}
-
-/* Tiempo total de animación: ~2.5 segundos */
-
-/* ============================================
-   ANIMACIONES PARA EL NAVBAR
-   ============================================ */
-
 /* El navbar baja desde arriba de la página */
 .navbar {
-    /* Estado inicial: invisible y arriba */
     transform: translateY(-100%);
     opacity: 0;
-    /* Aplicar la animación */
     animation: slideDown 1s ease-out forwards;
 }
 
-/* ========================================
-   ANIMACIONES DE SCROLL
-   ======================================== */
+/* ============================================
+   NOTAS PARA AGREGAR NUEVAS ANIMACIONES
+   ============================================ */
 
-/* Estado inicial: elementos ocultos */
-.scroll-hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Estado visible */
-.scroll-visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ========================================
-   ANIMACIÓN: FADE UP (Aparece desde abajo)
-   ======================================== */
-.scroll-hidden.animate-fadeUp {
-    transform: translateY(40px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.6s;
-}
-
-.scroll-visible.animate-fadeUp {
-    transform: translateY(0);
-}
-
-/* ========================================
-   ANIMACIÓN: FADE IN (Solo opacidad)
-   ======================================== */
-.scroll-hidden.animate-fadeIn {
-    transition: opacity 0.5s ease-out,
-                visibility 0.5s;
-}
-
-.scroll-visible.animate-fadeIn {
-    /* Solo cambia opacidad */
-}
-
-/* ========================================
-   ANIMACIÓN: SLIDE LEFT (Desde la derecha)
-   ======================================== */
-.scroll-hidden.animate-slideLeft {
-    transform: translateX(60px);
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.7s;
-}
-
-.scroll-visible.animate-slideLeft {
-    transform: translateX(0);
-}
-
-/* ========================================
-   ANIMACIÓN: SLIDE RIGHT (Desde la izquierda)
-   ======================================== */
-.scroll-hidden.animate-slideRight {
-    transform: translateX(-60px);
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.7s;
-}
-
-.scroll-visible.animate-slideRight {
-    transform: translateX(0);
-}
-
-/* ========================================
-   ANIMACIÓN: SCALE UP (Crece desde pequeño)
-   ======================================== */
-.scroll-hidden.animate-scaleUp {
-    transform: scale(0.85);
-    transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                visibility 0.5s;
-}
-
-.scroll-visible.animate-scaleUp {
-    transform: scale(1);
-}
-
-/* ========================================
-   ANIMACIÓN: ROTATE IN (Rota mientras aparece)
-   ======================================== */
-.scroll-hidden.animate-rotateIn {
-    transform: rotate(-5deg) scale(0.9);
-    transition: opacity 0.6s ease-out,
-                transform 0.6s ease-out,
-                visibility 0.6s;
-}
-
-.scroll-visible.animate-rotateIn {
-    transform: rotate(0deg) scale(1);
-}
-
-/* ========================================
-   ANIMACIÓN: BLUR IN (Desenfoque inicial)
-   ======================================== */
-.scroll-hidden.animate-blurIn {
-    filter: blur(8px);
-    transition: opacity 0.7s ease-out,
-                filter 0.7s ease-out,
-                visibility 0.7s;
-}
-
-.scroll-visible.animate-blurIn {
-    filter: blur(0);
-}
-
-/* ========================================
-   ANIMACIÓN: STAGGER (Para contenedores)
-   ======================================== */
-.animate-stagger [data-stagger-item] {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.animate-stagger [data-stagger-item].scroll-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ========================================
-   ANIMACIÓN: FLIP IN (Voltea en 3D)
-   ======================================== */
-.scroll-hidden.animate-flipIn {
-    transform: perspective(1000px) rotateX(-15deg);
-    transform-origin: center top;
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.7s;
-}
-
-.scroll-visible.animate-flipIn {
-    transform: perspective(1000px) rotateX(0deg);
-}
-
-/* ========================================
-   ANIMACIÓN: SLIDE UP (Desde abajo, más pronunciado)
-   ======================================== */
-.scroll-hidden.animate-slideUp {
-    transform: translateY(80px);
-    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                visibility 0.8s;
-}
-
-.scroll-visible.animate-slideUp {
-    transform: translateY(0);
-}
-
-/* ========================================
-   UTILIDADES: DELAYS PREDEFINIDOS
-   ======================================== */
-.delay-100 { transition-delay: 100ms !important; }
-.delay-200 { transition-delay: 200ms !important; }
-.delay-300 { transition-delay: 300ms !important; }
-.delay-400 { transition-delay: 400ms !important; }
-.delay-500 { transition-delay: 500ms !important; }
-
-/* ========================================
-   UTILIDADES: DURACIONES PERSONALIZADAS
-   ======================================== */
-.duration-fast { transition-duration: 400ms !important; }
-.duration-normal { transition-duration: 600ms !important; }
-.duration-slow { transition-duration: 800ms !important; }
-.duration-very-slow { transition-duration: 1000ms !important; }
-
-/* ========================================
-   MEJORAS DE RENDIMIENTO
-   ======================================== */
-.scroll-hidden,
-.scroll-visible {
-    will-change: opacity, transform;
-}
-
-/* Desactivar will-change después de la animación */
-.scroll-visible.animate-fadeUp,
-.scroll-visible.animate-fadeIn,
-.scroll-visible.animate-slideLeft,
-.scroll-visible.animate-slideRight,
-.scroll-visible.animate-scaleUp,
-.scroll-visible.animate-rotateIn,
-.scroll-visible.animate-blurIn,
-.scroll-visible.animate-flipIn,
-.scroll-visible.animate-slideUp {
-    will-change: auto;
-}
-
-/* ========================================
-   RESPONSIVE: Reducir movimiento si el usuario lo prefiere
-   ======================================== */
-@media (prefers-reduced-motion: reduce) {
-    .scroll-hidden {
-        transition: opacity 0.3s ease !important;
-        transform: none !important;
-        filter: none !important;
-    }
-    
-    .scroll-visible {
-        transition: opacity 0.3s ease !important;
-        transform: none !important;
-        filter: none !important;
-    }
-}
+/*
+  Para agregar una nueva animación a una sección:
+  
+  1. Crea un @keyframes específico para esa sección
+  2. Aplica la animación directamente al selector de la sección
+  3. No reutilices clases genéricas
+  
+  Ejemplo para el footer:
+  
+  @keyframes footerSlideUp {
+      from {
+          opacity: 0;
+          transform: translateY(50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+  
+  .footer {
+      opacity: 0;
+      animation: footerSlideUp 0.8s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 30%;
+  }
+*/
