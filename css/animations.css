@@ -56,6 +56,42 @@
 }
 
 /* ============================================
+   FILOSOFÍA SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: elementos ocultos */
+.philosophy .split-row .image-content,
+.philosophy .split-row .text-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.philosophy .split-row .image-content.visible,
+.philosophy .split-row .text-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays específicos para cada elemento */
+.philosophy .split-row:first-of-type .image-content {
+    transition-delay: 0s; /* Aparece primero */
+}
+
+.philosophy .split-row:first-of-type .text-content {
+    transition-delay: 0.3s; /* Aparece después de la imagen */
+}
+
+.philosophy .split-row.reverse .text-content {
+    transition-delay: 0s; /* En reverse, texto primero */
+}
+
+.philosophy .split-row.reverse .image-content {
+    transition-delay: 0.3s; /* Imagen después */
+}
+
+/* ============================================
    NOTAS PARA AGREGAR NUEVAS ANIMACIONES
    ============================================ */
 

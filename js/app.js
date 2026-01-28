@@ -1,12 +1,13 @@
 import '../css/main.css';
 import { initNavbar } from './components/Navbar.js';
+import { initScrollTrigger } from './utils/scrollTrigger.js';
 
 // ========================================
 // DOM Ready Initialization
 // ========================================
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
-    initScrollAnimations();
+    initScrollTrigger();
 
-    console.log('✅ App initialized: Navbar & Scroll Animations ready');
+    console.log('✅ App initialized: Navbar & Scroll Trigger ready');
 });
