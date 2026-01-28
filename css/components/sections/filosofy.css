@@ -31,6 +31,7 @@
 /* Estilos para las imágenes */
 .split-row .image-content img {
     width: 100%;
+    min-height: 500px;
     height: auto;
     border-radius: 8px;
     object-fit: cover;

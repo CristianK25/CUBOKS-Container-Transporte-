@@ -1,0 +1,50 @@
+/* Sección Modelos */
+.models {
+    text-align: center;
+}
+
+.models h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary, #8ee3c3);
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: var(--container-width, 1200px);
+    margin: 0 auto;
+}
+
+.model-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(142, 227, 195, 0.2);
+}
+
+.model-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.model-card h3 {
+    font-size: 1.75rem;
+    margin: 2rem 1.5rem 1rem;
+    color: var(--text-primary, #8ee3c3);
+}
+
+.model-card p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    padding: 0 1.5rem 2.5rem;
+    color: var(--text-secondary, #a0a0a0);
+}
