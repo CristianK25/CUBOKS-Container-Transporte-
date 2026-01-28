@@ -1,0 +1,35 @@
+/* ============================================
+   ANIMACIONES DE ENTRADA (FADE IN)
+   ============================================ */
+
+/* Animación de fade-in desde abajo */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   ANIMACIONES PARA EL HERO
+   ============================================ */
+
+/* El h1 aparece primero */
+.hero-content h1 {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.5s; /* Empieza después de 0.5s */
+}
+
+/* El p aparece después del h1 */
+.hero-content p {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.5s; /* Empieza después de 1.5s (0.5s + 1s de delay adicional) */
+}
+
+/* Tiempo total de animación: ~2.5 segundos */

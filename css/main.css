@@ -2,6 +2,8 @@
 /* Variables should be imported here if used */
 @import 'variables.css';
 
+/*Animaciones*/
+@import 'animations.css';
 /* Base Components (Navbar, Hero, Footer) */
 @import 'components/logo.css';
 @import 'components/navbar.css';
