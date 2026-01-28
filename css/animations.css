@@ -59,3 +59,213 @@
     animation: slideDown 1s ease-out forwards;
 }
 
+/* ========================================
+   ANIMACIONES DE SCROLL
+   ======================================== */
+
+/* Estado inicial: elementos ocultos */
+.scroll-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Estado visible */
+.scroll-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ========================================
+   ANIMACIÓN: FADE UP (Aparece desde abajo)
+   ======================================== */
+.scroll-hidden.animate-fadeUp {
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.6s;
+}
+
+.scroll-visible.animate-fadeUp {
+    transform: translateY(0);
+}
+
+/* ========================================
+   ANIMACIÓN: FADE IN (Solo opacidad)
+   ======================================== */
+.scroll-hidden.animate-fadeIn {
+    transition: opacity 0.5s ease-out,
+                visibility 0.5s;
+}
+
+.scroll-visible.animate-fadeIn {
+    /* Solo cambia opacidad */
+}
+
+/* ========================================
+   ANIMACIÓN: SLIDE LEFT (Desde la derecha)
+   ======================================== */
+.scroll-hidden.animate-slideLeft {
+    transform: translateX(60px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.7s;
+}
+
+.scroll-visible.animate-slideLeft {
+    transform: translateX(0);
+}
+
+/* ========================================
+   ANIMACIÓN: SLIDE RIGHT (Desde la izquierda)
+   ======================================== */
+.scroll-hidden.animate-slideRight {
+    transform: translateX(-60px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.7s;
+}
+
+.scroll-visible.animate-slideRight {
+    transform: translateX(0);
+}
+
+/* ========================================
+   ANIMACIÓN: SCALE UP (Crece desde pequeño)
+   ======================================== */
+.scroll-hidden.animate-scaleUp {
+    transform: scale(0.85);
+    transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                visibility 0.5s;
+}
+
+.scroll-visible.animate-scaleUp {
+    transform: scale(1);
+}
+
+/* ========================================
+   ANIMACIÓN: ROTATE IN (Rota mientras aparece)
+   ======================================== */
+.scroll-hidden.animate-rotateIn {
+    transform: rotate(-5deg) scale(0.9);
+    transition: opacity 0.6s ease-out,
+                transform 0.6s ease-out,
+                visibility 0.6s;
+}
+
+.scroll-visible.animate-rotateIn {
+    transform: rotate(0deg) scale(1);
+}
+
+/* ========================================
+   ANIMACIÓN: BLUR IN (Desenfoque inicial)
+   ======================================== */
+.scroll-hidden.animate-blurIn {
+    filter: blur(8px);
+    transition: opacity 0.7s ease-out,
+                filter 0.7s ease-out,
+                visibility 0.7s;
+}
+
+.scroll-visible.animate-blurIn {
+    filter: blur(0);
+}
+
+/* ========================================
+   ANIMACIÓN: STAGGER (Para contenedores)
+   ======================================== */
+.animate-stagger [data-stagger-item] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-stagger [data-stagger-item].scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================================
+   ANIMACIÓN: FLIP IN (Voltea en 3D)
+   ======================================== */
+.scroll-hidden.animate-flipIn {
+    transform: perspective(1000px) rotateX(-15deg);
+    transform-origin: center top;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.7s;
+}
+
+.scroll-visible.animate-flipIn {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+/* ========================================
+   ANIMACIÓN: SLIDE UP (Desde abajo, más pronunciado)
+   ======================================== */
+.scroll-hidden.animate-slideUp {
+    transform: translateY(80px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.8s;
+}
+
+.scroll-visible.animate-slideUp {
+    transform: translateY(0);
+}
+
+/* ========================================
+   UTILIDADES: DELAYS PREDEFINIDOS
+   ======================================== */
+.delay-100 { transition-delay: 100ms !important; }
+.delay-200 { transition-delay: 200ms !important; }
+.delay-300 { transition-delay: 300ms !important; }
+.delay-400 { transition-delay: 400ms !important; }
+.delay-500 { transition-delay: 500ms !important; }
+
+/* ========================================
+   UTILIDADES: DURACIONES PERSONALIZADAS
+   ======================================== */
+.duration-fast { transition-duration: 400ms !important; }
+.duration-normal { transition-duration: 600ms !important; }
+.duration-slow { transition-duration: 800ms !important; }
+.duration-very-slow { transition-duration: 1000ms !important; }
+
+/* ========================================
+   MEJORAS DE RENDIMIENTO
+   ======================================== */
+.scroll-hidden,
+.scroll-visible {
+    will-change: opacity, transform;
+}
+
+/* Desactivar will-change después de la animación */
+.scroll-visible.animate-fadeUp,
+.scroll-visible.animate-fadeIn,
+.scroll-visible.animate-slideLeft,
+.scroll-visible.animate-slideRight,
+.scroll-visible.animate-scaleUp,
+.scroll-visible.animate-rotateIn,
+.scroll-visible.animate-blurIn,
+.scroll-visible.animate-flipIn,
+.scroll-visible.animate-slideUp {
+    will-change: auto;
+}
+
+/* ========================================
+   RESPONSIVE: Reducir movimiento si el usuario lo prefiere
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-hidden {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
+        filter: none !important;
+    }
+    
+    .scroll-visible {
+        transition: opacity 0.3s ease !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
