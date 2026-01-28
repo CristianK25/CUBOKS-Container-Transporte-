@@ -1,5 +1,5 @@
 /* ============================================
-   ANIMACIONES DE ENTRADA (FADE IN)
+   KEYFRAMES LIBRARY
    ============================================ */
 
 /* Animación de fade-in desde abajo */
@@ -11,6 +11,18 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Animación de navbar bajando desde arriba */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
@@ -33,3 +45,17 @@
 }
 
 /* Tiempo total de animación: ~2.5 segundos */
+
+/* ============================================
+   ANIMACIONES PARA EL NAVBAR
+   ============================================ */
+
+/* El navbar baja desde arriba de la página */
+.navbar {
+    /* Estado inicial: invisible y arriba */
+    transform: translateY(-100%);
+    opacity: 0;
+    /* Aplicar la animación */
+    animation: slideDown 1s ease-out forwards;
+}
+
