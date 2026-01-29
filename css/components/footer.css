@@ -4,7 +4,7 @@
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.3);
     border-top: 1px solid rgba(142, 227, 195, 0.2);
-    margin-top: 4rem;
+    /* margin-top: 4rem; Removed to eliminate gap between CTA and footer */
 }
 
 .main-footer p {
