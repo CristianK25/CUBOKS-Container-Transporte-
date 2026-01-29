@@ -30,10 +30,29 @@
     box-shadow: 0 10px 30px rgba(142, 227, 195, 0.2);
 }
 
-.features-grid article img {
-    width: 120px;
-    height: 120px;
+.features-grid article .benefit-icon {
+    width: 80px;
+    height: 80px;
     margin-bottom: 2rem;
+    stroke: var(--accent-color, #8ee3c3);
+    transition: all 0.3s ease;
+}
+
+.features-grid article:nth-child(1) .benefit-icon {
+    stroke: #FF6B35; /* Naranja vibrante para rapidez */
+}
+
+.features-grid article:nth-child(2) .benefit-icon {
+    stroke: #4A90E2; /* Azul para durabilidad */
+}
+
+.features-grid article:nth-child(3) .benefit-icon {
+    stroke: #10B981; /* Verde para versatilidad */
+}
+
+.features-grid article:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 10px currentColor);
 }
 
 .features-grid article h3 {

@@ -1,0 +1,52 @@
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px; /* Slightly more space from bottom */
+    left: 30px;   /* User requested left corner */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000; /* Ensure it stays on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* No underline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.whatsapp-float:hover {
+    background-color: #20bd5a; /* Darker shade on hover */
+    box-shadow: 4px 4px 6px #666;
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor; 
+}
+
+/* Animation to draw attention */
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float {
+   animation: pulse-green 2s infinite;
+}
