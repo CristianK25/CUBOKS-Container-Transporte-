@@ -45,7 +45,56 @@
 
         <!-- Sección Logistica y Transporte -->
         <section id="logistica" class="logistica">
-            
+            <div class="section-header">
+                <h2>Logística Integral</h2>
+                <p>Nos encargamos de todo el proceso para que tú solo disfrutes.</p>
+            </div>
+
+            <div class="process-wrapper">
+                <!-- Línea conectora (Visual en CSS) -->
+                
+                <!-- PASO 1: Transporte -->
+                <div class="process-step">
+                    <div class="step-text">
+                        <span class="step-number">01</span>
+                        <h3>Transporte Especializado</h3>
+                        <p>Llevamos tu módulo a cualquier punto del país con nuestra flota de camiones y equipos de alta capacidad.</p>
+                        <ul class="step-features">
+                            <li>✓ Cobertura Nacional</li>
+                            <li>✓ Seguimiento en tiempo real</li>
+                            <li>✓ Seguros de carga incluidos</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual trigger-gallery" data-gallery="transporte">
+                        <img src="https://placehold.co/600x400" alt="Camión transportando módulo">
+                        <div class="overlay">
+                            <span class="icon-camera">📷</span>
+                            <span class="text-gallery">Ver galería de Transporte</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 2: Instalación -->
+                <div class="process-step reverse">
+                    <div class="step-text">
+                        <span class="step-number">02</span>
+                        <h3>Instalación y Nivelación</h3>
+                        <p>No importa el terreno. Nuestras grúas y equipo técnico posicionan tu hogar con precisión milimétrica.</p>
+                        <ul class="step-features">
+                            <li>✓ Grúas de alto tonelaje</li>
+                            <li>✓ Instalación en terrenos difíciles</li>
+                            <li>✓ Nivelación láser profesional</li>
+                        </ul>
+                    </div>
+                    <div class="step-visual trigger-gallery" data-gallery="instalacion">
+                        <img src="https://placehold.co/600x400" alt="Grúa instalando módulo">
+                        <div class="overlay">
+                            <span class="icon-camera">📷</span>
+                            <span class="text-gallery">Ver galería de Instalación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Sección Beneficios -->
@@ -79,7 +128,7 @@
             </div>
         </section>
 
-        <!-- Sección Specs --> Ahora va a ser la seccion de venta de contenedor
+        <!-- Sección VENTA -->
         <section id="venta" class="venta">
             <h2>Especificaciones Técnicas</h2>
             <div class="venta-grid">
@@ -101,7 +150,7 @@
             </div>
         </section>
 
-        <!-- Sección Modelos --> Ahora va a ser la seccion habitacional o construccion
+        <!-- Sección Habitacional -->
         <section id="habitacional" class="habitacional">
             <h2>Modelos Disponibles</h2>
             <div class="habitacional-grid">
@@ -161,5 +210,19 @@
             <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 0 0 1.333 4.993L2 22l5.233-1.372a9.99 9.99 0 0 0 4.779 1.216h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.922-7.062A9.935 9.935 0 0 0 12.012 2zm0 18.316h-.005a8.316 8.316 0 0 1-4.234-1.154l-.303-.18-3.148.825.84-3.069-.198-.315a8.315 8.315 0 0 1-1.275-4.439c0-4.584 3.73-8.316 8.32-8.316 2.223 0 4.314.866 5.887 2.438a8.277 8.277 0 0 1 2.441 5.891c-.001 4.584-3.73 8.318-8.327 8.318zm4.558-6.236c-.249-.125-1.474-.727-1.703-.81-.229-.083-.395-.125-.562.125-.166.25-.644.81-.789.977-.145.166-.29.187-.54.062-.25-.125-1.054-.388-2.008-1.238-.737-.656-1.234-1.466-1.379-1.714-.145-.25-.015-.385.11-.508.113-.11.25-.29.374-.436.125-.145.166-.25.25-.415.083-.166.041-.312-.021-.436-.062-.125-.562-1.352-.769-1.852-.202-.488-.406-.421-.562-.429l-.478-.008c-.166 0-.436.062-.664.311-.229.25-.873.852-.873 2.079 0 1.227.894 2.413 1.018 2.58.125.166 1.761 2.688 4.267 3.769 1.493.645 2.067.703 2.825.59.83-.122 1.474-.602 1.682-1.185.208-.582.208-1.082.146-1.185-.062-.103-.229-.166-.478-.291z" fill="currentColor"/>
         </svg>
     </a>
+    <!-- Lightbox Modal para Galería -->
+    <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+        <button class="close-lightbox" aria-label="Cerrar galería">&times;</button>
+        
+        <div class="lightbox-content">
+            <button class="nav-btn prev-btn" aria-label="Imagen anterior">&#10094;</button>
+            <img src="" alt="Galería full screen" class="lightbox-image">
+            <button class="nav-btn next-btn" aria-label="Siguiente imagen">&#10095;</button>
+        </div>
+        
+        <div class="lightbox-caption">
+            <span id="current-index">1</span> / <span id="total-images">5</span>
+        </div>
+    </div>
 </body>
 </html>
