@@ -11,10 +11,10 @@
 @import 'components/footer.css';
 
 /* Section-Specific Styles */
-@import 'components/sections/filosofy.css';
+@import 'components/sections/logistica.css';
 @import 'components/sections/benefits.css';
-@import 'components/sections/specs.css';
-@import 'components/sections/models.css';
+@import 'components/sections/venta.css';
+@import 'components/sections/habitacional.css';
 @import 'components/sections/faq.css';
 @import 'components/sections/cta.css';
 

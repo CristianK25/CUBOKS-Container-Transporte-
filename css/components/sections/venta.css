@@ -1,15 +1,15 @@
-/* Sección Especificaciones Técnicas */
-.specs {
+/* Sección Especificaciones Técnicas (Ahora Venta) */
+.venta {
     text-align: center;
 }
 
-.specs h2 {
+.venta h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     color: var(--text-primary, #8ee3c3);
 }
 
-.specs-grid {
+.venta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -17,7 +17,7 @@
     margin: 0 auto;
 }
 
-.spec-card {
+.venta-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -25,24 +25,24 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.spec-card:hover {
+.venta-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(142, 227, 195, 0.2);
 }
 
-.spec-card img {
+.venta-card img {
     width: 100%;
     height: 350px;
     object-fit: cover;
 }
 
-.spec-card h3 {
+.venta-card h3 {
     font-size: 1.5rem;
     margin: 2rem 1rem 1rem;
     color: var(--text-primary, #8ee3c3);
 }
 
-.spec-card p {
+.venta-card p {
     font-size: 1rem;
     line-height: 1.6;
     padding: 0 1rem 2.5rem;
