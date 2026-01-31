@@ -1,19 +1,15 @@
-// js/components/Lightbox.js
-
-/**
- * Datos de las galerías.
- * IMPORTANTE: Reemplazar estos placeholders con las rutas reales de tus imágenes.
- */
 const galleries = {
     transporte: [
-        'https://placehold.co/1200x800?text=Transporte+1',
-        'https://placehold.co/1200x800?text=Camion+en+Ruta',
-        'https://placehold.co/1200x800?text=Llegada+a+Obra'
+        'assets/img/logistica/paso1_main.jpeg',
+        'assets/img/logistica/paso1_2.jpeg',
+        'assets/img/logistica/paso1_3.jpeg',
+        'assets/img/logistica/paso1_4.jpeg'
     ],
     instalacion: [
-        'https://placehold.co/1200x800?text=Instalacion+1',
-        'https://placehold.co/1200x800?text=Grua+Levantando',
-        'https://placehold.co/1200x800?text=Nivelacion+Final'
+        'assets/img/logistica/paso2_main.jpeg',
+        'assets/img/logistica/paso2_2.jpeg',
+        'assets/img/logistica/paso2_3.jpeg',
+        'assets/img/logistica/paso2_4.jpeg'
     ]
 };
 
