@@ -43,7 +43,7 @@ export const initLightbox = () => {
 
     // 2. Cerrar Modal
     closeBtn.addEventListener('click', closeModal);
-    
+
     // Cerrar al hacer click fuera de la imagen
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
@@ -66,14 +66,18 @@ export const initLightbox = () => {
     nextBtn.addEventListener('click', showNext);
 
     function updateImage() {
-        modalImg.style.opacity = '0'; // Efecto fade out breve
-        setTimeout(() => {
-            modalImg.src = currentGallery[currentIndex];
-            modalImg.style.opacity = '1'; // Fade in
-        }, 150);
-
+        // Actualizar contador inmediatamente
         if (currentIndexSpan) currentIndexSpan.textContent = currentIndex + 1;
         if (totalImagesSpan) totalImagesSpan.textContent = currentGallery.length;
+
+        // Cambiar imagen con transición
+        modalImg.style.transition = 'opacity 0.2s ease';
+        modalImg.style.opacity = '0';
+
+        setTimeout(() => {
+            modalImg.src = currentGallery[currentIndex];
+            modalImg.style.opacity = '1';
+        }, 200);
     }
 
     function openModal() {
@@ -95,6 +99,6 @@ export const initLightbox = () => {
         currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
         updateImage();
     }
-    
+
     console.log('📸 Lightbox initialized');
 };

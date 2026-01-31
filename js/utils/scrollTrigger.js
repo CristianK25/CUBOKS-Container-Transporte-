@@ -45,6 +45,17 @@ export function initScrollTrigger() {
     console.log(`🎬 ScrollTrigger: Observando ${philosophyElements.length} elementos`);
 
     // ========================================
+    // SECCIÓN COMPARATIVA
+    // ========================================
+    const comparisonElements = document.querySelectorAll('.comparison-section .reveal');
+
+    comparisonElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    console.log(`🎬 ScrollTrigger: Observando ${comparisonElements.length} elementos de comparativa`);
+
+    // ========================================
     // AGREGAR MÁS SECCIONES AQUÍ
     // ========================================
     // Ejemplo para agregar otra sección:
