@@ -7,7 +7,7 @@
 /* Base Components (Navbar, Hero, Footer) */
 @import 'components/logo.css';
 @import 'components/navbar.css';
-@import 'components/hero.css';
+@import 'components/sections/hero.css';
 @import 'components/footer.css';
 
 /* Section-Specific Styles */
@@ -15,7 +15,8 @@
 @import 'components/sections/benefits.css';
 @import 'components/sections/venta.css';
 @import 'components/sections/habitacional.css';
-@import 'components/comparison.css';
+@import 'components/sections/interiors.css';
+@import 'components/sections/comparison.css';
 @import 'components/sections/faq.css';
 @import 'components/sections/cta.css';
 
