@@ -154,93 +154,108 @@
 
 
 
-        <!-- Sección Interiores - Quad-View Cards -->
+
+        <!-- Sección Interiores - Carrusel Quad-View -->
         <section id="interiores" class="interiors-section">
             <h2 class="section-title">Interiores de Alta Gama</h2>
-            <p class="section-subtitle">Explora nuestros espacios diseñados para cada estilo de vida</p>
+            <p class="section-subtitle">Explora nuestros espacios a gran escala</p>
 
-            <div class="quad-cards-container">
-                
-                <!-- Tarjeta 1: Estilo Moderno -->
-                <div class="quad-card">
-                    <div class="quad-card-header">
-                        <h3>Estilo Moderno</h3>
+            <div class="carousel-container">
+                <!-- Botón Previo -->
+                <button class="carousel-btn prev" aria-label="Estilo anterior">&#10094;</button>
+
+                <!-- Track de Slides -->
+                <div class="carousel-track" id="interiors-track">
+                    
+                    <!-- Slide 1: Moderna (ACTIVA) -->
+                    <div class="quad-card active" data-index="0">
+                        <div class="quad-card-header">
+                            <h3>Estilo Moderno</h3>
+                        </div>
+                        <div class="quad-grid">
+                            <div>
+                                <img src="https://placehold.co/800x800/2a2a2a/FFF?text=Living+Moderno" alt="Living Moderno">
+                                <span class="room-label">Living</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/333/FFF?text=Baño+Moderno" alt="Baño Moderno">
+                                <span class="room-label">Baño</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/3a3a3a/FFF?text=Cocina+Moderna" alt="Cocina Moderna">
+                                <span class="room-label">Cocina</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/444/FFF?text=Habitación+Moderna" alt="Dormitorio Moderno">
+                                <span class="room-label">Dormitorio</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quad-grid">
-                        <div>
-                            <img src="https://placehold.co/400x400/2a2a2a/FFF?text=Living" alt="Living Moderno">
-                            <span class="room-label">Living</span>
+
+                    <!-- Slide 2: Industrial -->
+                    <div class="quad-card" data-index="1">
+                        <div class="quad-card-header">
+                            <h3>Estilo Industrial</h3>
                         </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/333/FFF?text=Baño" alt="Baño Moderno">
-                            <span class="room-label">Baño</span>
+                        <div class="quad-grid">
+                            <div>
+                                <img src="https://placehold.co/800x800/4a4a4a/FFF?text=Living+Industrial" alt="Living Industrial">
+                                <span class="room-label">Living</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/555/FFF?text=Baño+Industrial" alt="Baño Industrial">
+                                <span class="room-label">Baño</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/5a5a5a/FFF?text=Cocina+Industrial" alt="Cocina Industrial">
+                                <span class="room-label">Cocina</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/666/FFF?text=Habitación+Industrial" alt="Dormitorio Industrial">
+                                <span class="room-label">Dormitorio</span>
+                            </div>
                         </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/3a3a3a/FFF?text=Cocina" alt="Cocina Moderna">
-                            <span class="room-label">Cocina</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/444/FFF?text=Dormitorio" alt="Dormitorio Moderno">
-                            <span class="room-label">Dormitorio</span>
-                        </div>
-                        <div class="quad-overlay">VER DETALLES</div>
                     </div>
+
+                    <!-- Slide 3: Minimalista -->
+                    <div class="quad-card" data-index="2">
+                        <div class="quad-card-header">
+                            <h3>Estilo Minimalista</h3>
+                        </div>
+                        <div class="quad-grid">
+                            <div>
+                                <img src="https://placehold.co/800x800/6a6a6a/FFF?text=Living+Minimalista" alt="Living Minimalista">
+                                <span class="room-label">Living</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/777/FFF?text=Baño+Minimalista" alt="Baño Minimalista">
+                                <span class="room-label">Baño</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/7a7a7a/FFF?text=Cocina+Minimalista" alt="Cocina Minimalista">
+                                <span class="room-label">Cocina</span>
+                            </div>
+                            <div>
+                                <img src="https://placehold.co/800x800/888/FFF?text=Habitación+Minimalista" alt="Dormitorio Minimalista">
+                                <span class="room-label">Dormitorio</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Tarjeta 2: Estilo Industrial -->
-                <div class="quad-card">
-                    <div class="quad-card-header">
-                        <h3>Estilo Industrial</h3>
-                    </div>
-                    <div class="quad-grid">
-                        <div>
-                            <img src="https://placehold.co/400x400/4a4a4a/FFF?text=Living" alt="Living Industrial">
-                            <span class="room-label">Living</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/555/FFF?text=Baño" alt="Baño Industrial">
-                            <span class="room-label">Baño</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/5a5a5a/FFF?text=Cocina" alt="Cocina Industrial">
-                            <span class="room-label">Cocina</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/666/FFF?text=Dormitorio" alt="Dormitorio Industrial">
-                            <span class="room-label">Dormitorio</span>
-                        </div>
-                        <div class="quad-overlay">VER DETALLES</div>
-                    </div>
-                </div>
+                <!-- Botón Siguiente -->
+                <button class="carousel-btn next" aria-label="Siguiente estilo">&#10095;</button>
+            </div>
 
-                <!-- Tarjeta 3: Estilo Minimalista (Opcional) -->
-                <div class="quad-card">
-                    <div class="quad-card-header">
-                        <h3>Estilo Minimalista</h3>
-                    </div>
-                    <div class="quad-grid">
-                        <div>
-                            <img src="https://placehold.co/400x400/6a6a6a/FFF?text=Living" alt="Living Minimalista">
-                            <span class="room-label">Living</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/777/FFF?text=Baño" alt="Baño Minimalista">
-                            <span class="room-label">Baño</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/7a7a7a/FFF?text=Cocina" alt="Cocina Minimalista">
-                            <span class="room-label">Cocina</span>
-                        </div>
-                        <div>
-                            <img src="https://placehold.co/400x400/888/FFF?text=Dormitorio" alt="Dormitorio Minimalista">
-                            <span class="room-label">Dormitorio</span>
-                        </div>
-                        <div class="quad-overlay">VER DETALLES</div>
-                    </div>
-                </div>
-
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button class="indicator-dot active" data-slide="0" aria-label="Ir a Estilo Moderno"></button>
+                <button class="indicator-dot" data-slide="1" aria-label="Ir a Estilo Industrial"></button>
+                <button class="indicator-dot" data-slide="2" aria-label="Ir a Estilo Minimalista"></button>
             </div>
         </section>
+
 
 
 

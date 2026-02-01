@@ -2,6 +2,7 @@ import '../css/main.css';
 import { initNavbar } from './components/Navbar.js';
 import { initScrollTrigger } from './utils/scrollTrigger.js';
 import { initLightbox } from './components/Lightbox.js';
+import { initInteriorsCarousel } from './components/InteriorsCarousel.js';
 
 // ========================================
 // DOM Ready Initialization
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initScrollTrigger();
     initLightbox();
+    initInteriorsCarousel();
 
-    console.log('✅ App initialized: Navbar & Scroll Trigger ready');
+    console.log('✅ App initialized: Navbar, Scroll Trigger & Carousel ready');
 });
