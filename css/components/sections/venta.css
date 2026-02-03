@@ -1,6 +1,8 @@
-/* Sección Especificaciones Técnicas (Ahora Venta) */
+/* Sección Venta de Contenedores */
 .venta {
     text-align: center;
+    padding: 6rem 5%;
+    background-color: var(--bg-body, #111525);
 }
 
 .venta h2 {
@@ -11,40 +13,161 @@
 
 .venta-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
     max-width: var(--container-width, 1200px);
     margin: 0 auto;
 }
 
+/* ========================================
+   TARJETA DE PRODUCTO
+   ======================================== */
 .venta-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
+    border-radius: 16px;
+    overflow: hidden; /* Necesario para la cinta diagonal */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Para posicionar la cinta */
+    display: flex;
+    flex-direction: column;
 }
 
 .venta-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(142, 227, 195, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(142, 227, 195, 0.25);
+    border-color: rgba(142, 227, 195, 0.3);
 }
 
 .venta-card img {
     width: 100%;
-    height: 350px;
+    height: 280px;
     object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.venta-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   CINTA DIAGONAL "MÁS VENDIDO"
+   ======================================== */
+.venta-card .ribbon {
+    display: none; /* Oculta por defecto */
+}
+
+.venta-card.best-seller .ribbon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: var(--accent, #8ee3c3);
+    color: var(--bg-body, #111525);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 50px;
+    transform: rotate(45deg);
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   CONTENIDO DE LA TARJETA
+   ======================================== */
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .venta-card h3 {
-    font-size: 1.5rem;
-    margin: 2rem 1rem 1rem;
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem 0;
     color: var(--text-primary, #8ee3c3);
+    font-weight: 600;
 }
 
-.venta-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    padding: 0 1rem 2.5rem;
+.card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: var(--text-secondary, #a0a0a0);
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   FILA DE ESPECIFICACIONES TÉCNICAS
+   ======================================== */
+.specs-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.spec-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.spec-value {
+    font-size: 0.8rem;
+    color: var(--text-secondary, #a0a0a0);
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   BLOQUE DE PRECIO
+   ======================================== */
+.price-container {
+    margin-top: auto; /* Empuja el precio al fondo */
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.price {
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent, #8ee3c3);
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .venta-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .specs-row {
+        gap: 0.5rem;
+    }
+    
+    .spec-value {
+        font-size: 0.7rem;
+    }
+    
+    .price {
+        font-size: 1.8rem;
+    }
 }
