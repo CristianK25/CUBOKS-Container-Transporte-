@@ -92,6 +92,64 @@
 }
 
 /* ============================================
+   LOGÍSTICA SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: elementos ocultos */
+.logistica .section-header h2,
+.logistica .section-header p,
+.logistica .process-step .step-text,
+.logistica .process-step.reverse .step-text,
+.logistica .process-step .step-visual,
+.logistica .process-step.reverse .step-visual {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.logistica .section-header h2.visible,
+.logistica .section-header p.visible,
+.logistica .process-step .step-text.visible,
+.logistica .process-step.reverse .step-text.visible,
+.logistica .process-step .step-visual.visible,
+.logistica .process-step.reverse .step-visual.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays específicos para cada elemento */
+/* Primero: Título */
+.logistica .section-header h2 {
+    transition-delay: 0s;
+}
+
+/* Segundo: Descripción */
+.logistica .section-header p {
+    transition-delay: 0.2s;
+}
+
+/* Tercero: Texto del primer paso (Transporte) */
+.logistica .process-step:first-of-type .step-text {
+    transition-delay: 0.4s;
+}
+
+/* Cuarto: Texto del segundo paso (Instalación) */
+.logistica .process-step.reverse .step-text {
+    transition-delay: 0.6s;
+}
+
+/* Quinto: Visual del primer paso (Transporte) */
+.logistica .process-step:first-of-type .step-visual {
+    transition-delay: 0.8s;
+}
+
+/* Sexto: Visual del segundo paso (Instalación) */
+.logistica .process-step.reverse .step-visual {
+    transition-delay: 1s;
+}
+
+/* ============================================
    NOTAS PARA AGREGAR NUEVAS ANIMACIONES
    ============================================ */
 

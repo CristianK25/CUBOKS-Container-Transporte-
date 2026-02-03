@@ -56,6 +56,21 @@ export function initScrollTrigger() {
     console.log(`🎬 ScrollTrigger: Observando ${comparisonElements.length} elementos de comparativa`);
 
     // ========================================
+    // SECCIÓN LOGÍSTICA
+    // ========================================
+    const logisticaElements = document.querySelectorAll(
+        '.logistica .section-header h2, .logistica .section-header p, ' +
+        '.logistica .process-step .step-text, .logistica .process-step.reverse .step-text, ' +
+        '.logistica .process-step .step-visual, .logistica .process-step.reverse .step-visual'
+    );
+
+    logisticaElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    console.log(`🎬 ScrollTrigger: Observando ${logisticaElements.length} elementos de logística`);
+
+    // ========================================
     // AGREGAR MÁS SECCIONES AQUÍ
     // ========================================
     // Ejemplo para agregar otra sección:
