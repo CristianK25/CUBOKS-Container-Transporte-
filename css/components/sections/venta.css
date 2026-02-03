@@ -120,8 +120,11 @@
 }
 
 .spec-icon {
-    font-size: 1.5rem;
-    line-height: 1;
+    width: 24px;
+    height: 24px;
+    color: var(--accent, #8ee3c3);
+    stroke: var(--accent, #8ee3c3);
+    flex-shrink: 0;
 }
 
 .spec-value {
