@@ -10,6 +10,16 @@ const galleries = {
         'assets/img/logistica/paso2_2.jpeg',
         'assets/img/logistica/paso2_3.jpeg',
         'assets/img/logistica/paso2_4.jpeg'
+    ],
+    // Galerías de Interiores (collages completos)
+    'interiores-moderno': [
+        'assets/img/interiores/moderno-collage.jpg'
+    ],
+    'interiores-industrial': [
+        'assets/img/interiores/industrial-collage.jpg'
+    ],
+    'interiores-minimalista': [
+        'assets/img/interiores/minimalista-collage.jpg'
     ]
 };
 

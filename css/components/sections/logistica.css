@@ -158,7 +158,9 @@
 }
 
 .icon-camera {
-    font-size: 3rem;
+    width: 48px;
+    height: 48px;
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
