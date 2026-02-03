@@ -18,4 +18,9 @@
     --container-width: 1200px;
     --gutter: 1.5rem; /* Margen mínimo a los lados en móviles */
     --section-spacing: 8rem; /* Espaciado vertical entre secciones */
+
+    /* Rutas de Imágenes - Interiores (Collages 2x2) */
+    --img-interiores-moderno: url('../assets/img/interiores/moderno-collage.jpg');
+    --img-interiores-industrial: url('../assets/img/interiores/industrial-collage.jpg');
+    --img-interiores-minimalista: url('../assets/img/interiores/minimalista-collage.jpg');
 }

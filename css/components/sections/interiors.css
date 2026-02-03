@@ -101,26 +101,56 @@
     position: relative;
 }
 
-.quad-grid img {
+/* Cuadrantes con CSS Sprite */
+.room-quadrant {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 200%; /* La imagen completa es 2x2, cada cuadrante muestra 50% */
+    background-repeat: no-repeat;
     transition: filter 0.3s ease, transform 0.5s ease;
 }
 
+/* Rutas de imágenes por estilo - Definidas en css/variables.css */
+/* Estilo Moderno */
+.quad-grid[data-style="moderno"] .room-quadrant {
+    background-image: var(--img-interiores-moderno);
+}
+
+/* Estilo Industrial */
+.quad-grid[data-style="industrial"] .room-quadrant {
+    background-image: var(--img-interiores-industrial);
+}
+
+/* Estilo Minimalista */
+.quad-grid[data-style="minimalista"] .room-quadrant {
+    background-image: var(--img-interiores-minimalista);
+}
+
+/* Posicionamiento de cada cuadrante dentro del collage 2x2 */
+/* Living - Superior Izquierda */
+.room-quadrant.living {
+    background-position: 0% 0%;
+}
+
+/* Baño - Superior Derecha */
+.room-quadrant.bano {
+    background-position: 100% 0%;
+}
+
+/* Cocina - Inferior Izquierda */
+.room-quadrant.cocina {
+    background-position: 0% 100%;
+}
+
+/* Habitación - Inferior Derecha */
+.room-quadrant.habitacion {
+    background-position: 100% 100%;
+}
+
 /* Interactividad Hover en Grid */
-.quad-card:hover .quad-grid img {
-    filter: brightness(0.7);
-}
-
-.quad-grid > div {
-    overflow: hidden;
-    position: relative;
-}
-
-.quad-grid > div:hover img {
-    filter: brightness(1);
+.room-quadrant:hover {
     transform: scale(1.05);
     z-index: 1;
 }
@@ -139,6 +169,7 @@
     text-transform: uppercase;
     pointer-events: none;
     backdrop-filter: blur(4px);
+    display: none; /* Ocultar etiquetas de texto */
 }
 
 /* Navegación (Flechas) */
