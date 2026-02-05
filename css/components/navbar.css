@@ -73,7 +73,7 @@
 }
 
 /* ============================================
-   MENÚ MÓVIL (Hamburguesa)
+   BOTÓN HAMBURGUESA (Móvil)
    ============================================ */
 
 /* Botón hamburguesa - OCULTO en desktop */
@@ -102,71 +102,6 @@
         display: block;
     }
 
-    /* Menú deslizable desde la derecha */
-    .nav-links {
-        position: fixed;
-        top: 70px; /* Debajo del navbar */
-        right: -100%; /* Oculto fuera de pantalla */
-        width: 280px;
-        height: calc(100vh - 70px);
-        
-        /* Fondo oscuro con glassmorphism */
-        background-color: var(--bg-body);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        
-        /* Layout vertical */
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        
-        /* Sombra para profundidad */
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-        
-        /* Transición suave */
-        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        
-        /* Padding interno */
-        padding: 2rem 1.5rem;
-        
-        /* Scroll si hay muchos items */
-        overflow-y: auto;
-    }
-
-    /* Estado ACTIVO - Menú visible */
-    .nav-links.active {
-        right: 0;
-    }
-
-    /* Enlaces en móvil - Más espaciados */
-    .nav-links li {
-        width: 100%;
-        border-bottom: 1px solid var(--border-light);
-    }
-
-    .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 1rem 0;
-        font-size: 1rem;
-        color: var(--text-body);
-        transition: color 0.3s ease, padding-left 0.3s ease;
-    }
-
-    .nav-links a:hover {
-        color: var(--accent);
-        padding-left: 0.5rem; /* Efecto de desplazamiento */
-    }
-
-    /* Botón CTA en móvil */
-    .nav-links .btn-cta {
-        margin-top: 1rem;
-        width: 100%;
-        text-align: center;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-    }
-
     /* Navbar más compacto en móvil */
     .navbar {
         padding: 1rem 5%;
@@ -174,32 +109,5 @@
 
     .navbar.scrolled {
         padding: 0.8rem 5%;
-    }
-}
-
-/* ============================================
-   OVERLAY para cerrar menú (opcional)
-   ============================================ */
-@media (max-width: 768px) {
-    /* Overlay oscuro cuando el menú está abierto */
-    .nav-links.active::before {
-        content: '';
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100vw;
-        height: calc(100vh - 70px);
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-        animation: fadeIn 0.3s ease;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
     }
 }

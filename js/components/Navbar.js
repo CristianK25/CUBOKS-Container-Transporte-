@@ -27,39 +27,50 @@ export const initNavbar = () => {
     }
 
     // ============================================
-    // MENÚ MÓVIL HAMBURGUESA
+    // MENÚ MÓVIL - FULL SCREEN OVERLAY
     // ============================================
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
     if (mobileMenuBtn && navLinks) {
-        // Toggle menú al hacer clic en hamburguesa
-        mobileMenuBtn.addEventListener('click', () => {
-            const isActive = navLinks.classList.toggle('active');
-            
-            // Actualizar aria-expanded para accesibilidad
-            mobileMenuBtn.setAttribute('aria-expanded', isActive);
-            
-            // Cambiar icono entre hamburguesa y X
-            mobileMenuBtn.textContent = isActive ? '✕' : '☰';
-        });
+        // Función para abrir el menú
+        const openMenu = () => {
+            navLinks.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+
+            // Bloquear scroll del body cuando el menú está abierto
+            body.style.overflow = 'hidden';
+        };
+
+        // Función para cerrar el menú
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+
+            // Restaurar scroll del body
+            body.style.overflow = '';
+        };
+
+        // Abrir menú al hacer clic en hamburguesa
+        mobileMenuBtn.addEventListener('click', openMenu);
+
+        // Cerrar menú al hacer clic en el botón de cierre (×)
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', closeMenu);
+        }
 
         // Cerrar menú al hacer clic en cualquier enlace
         const navLinksItems = navLinks.querySelectorAll('a');
         navLinksItems.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.textContent = '☰';
-            });
+            link.addEventListener('click', closeMenu);
         });
 
-        // Cerrar menú al hacer clic fuera de él
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                mobileMenuBtn.textContent = '☰';
+        // Cerrar menú con tecla ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                closeMenu();
             }
         });
     }

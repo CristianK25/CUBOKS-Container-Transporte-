@@ -7,6 +7,7 @@
 /* Base Components (Navbar, Hero, Footer) */
 @import 'components/logo.css';
 @import 'components/navbar.css';
+@import 'components/mobile-menu.css';
 @import 'components/sections/hero.css';
 @import 'components/footer.css';
 
