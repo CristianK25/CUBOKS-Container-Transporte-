@@ -26,5 +26,41 @@ export const initNavbar = () => {
         observer.observe(hero);
     }
 
-    // ... aquí iría tu lógica del menú hamburguesa ...
+    // ============================================
+    // MENÚ MÓVIL HAMBURGUESA
+    // ============================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuBtn && navLinks) {
+        // Toggle menú al hacer clic en hamburguesa
+        mobileMenuBtn.addEventListener('click', () => {
+            const isActive = navLinks.classList.toggle('active');
+            
+            // Actualizar aria-expanded para accesibilidad
+            mobileMenuBtn.setAttribute('aria-expanded', isActive);
+            
+            // Cambiar icono entre hamburguesa y X
+            mobileMenuBtn.textContent = isActive ? '✕' : '☰';
+        });
+
+        // Cerrar menú al hacer clic en cualquier enlace
+        const navLinksItems = navLinks.querySelectorAll('a');
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera de él
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+    }
 };
