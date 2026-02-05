@@ -29,32 +29,22 @@
     margin: 0 auto;
 }
 
-/* Grid de Tarjetas - 3 + 2 Layout */
+/* Grid de Tarjetas - 2 COLUMNAS GIGANTES */
 .exteriores-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1400px;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    max-width: min(90%, 1600px);
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-/* Centrar las últimas 2 tarjetas */
-.exteriores-grid .exterior-card:nth-child(4),
+/* La 5ª Tarjeta - CENTRADA Y GIGANTE */
 .exteriores-grid .exterior-card:nth-child(5) {
-    grid-column: span 1;
-}
-
-/* Ajustar el grid para que las últimas 2 estén centradas */
-.exteriores-grid .exterior-card:nth-child(4) {
-    grid-column: 1 / 2;
-    margin-left: auto;
-    margin-right: 1rem;
-}
-
-.exteriores-grid .exterior-card:nth-child(5) {
-    grid-column: 2 / 3;
-    margin-left: 1rem;
-    margin-right: auto;
+    grid-column: 1 / -1;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* Tarjeta Individual */
@@ -75,11 +65,11 @@
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Contenedor de Imagen */
+/* Contenedor de Imagen - PANORÁMICO para tarjetas gigantes */
 .exterior-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.3);
 }
@@ -96,12 +86,12 @@
     transform: scale(1.08);
 }
 
-/* Título de la Tarjeta */
+/* Título de la Tarjeta - MÁS GRANDE */
 .exterior-title {
-    padding: 1.5rem;
-    font-size: 1.25rem;
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-primary, #ffffff);
+    color: #ffffff;
     text-align: center;
     letter-spacing: -0.01em;
     margin: 0;
@@ -119,22 +109,15 @@
     }
 
     .exteriores-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        max-width: min(95%, 1200px);
     }
 
-    /* Resetear el layout especial en tablet */
-    .exteriores-grid .exterior-card:nth-child(4),
-    .exteriores-grid .exterior-card:nth-child(5) {
-        grid-column: span 1;
-        margin: 0;
-    }
-
-    /* La quinta tarjeta ocupa ambas columnas y se centra */
+    /* La quinta tarjeta sigue centrada */
     .exteriores-grid .exterior-card:nth-child(5) {
         grid-column: 1 / -1;
-        max-width: 50%;
-        margin: 0 auto;
+        max-width: 600px;
     }
 }
 
@@ -153,21 +136,19 @@
         gap: 1.5rem;
     }
 
-    /* Resetear todos los ajustes especiales */
-    .exteriores-grid .exterior-card:nth-child(4),
+    /* La quinta tarjeta vuelve a comportarse normal */
     .exteriores-grid .exterior-card:nth-child(5) {
         grid-column: 1;
-        margin: 0;
         max-width: 100%;
     }
 
     .exterior-image {
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 3;
     }
 
     .exterior-title {
-        font-size: 1.125rem;
-        padding: 1.25rem;
+        font-size: 1.25rem;
+        padding: 1.5rem;
     }
 }
 
