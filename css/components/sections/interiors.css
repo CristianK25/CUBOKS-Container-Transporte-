@@ -126,13 +126,18 @@
 }
 
 /* Estilo Industrial */
-.quad-grid[data-style="industrial"] .room-quadrant {
-    background-image: var(--img-interiores-industrial);
+.quad-grid[data-style="oficina"] .room-quadrant {
+    background-image: var(--img-interiores-oficina);
 }
 
 /* Estilo Minimalista */
 .quad-grid[data-style="minimalista"] .room-quadrant {
     background-image: var(--img-interiores-minimalista);
+}
+
+/* Estilo Rustico*/
+.quad-grid[data-style="rustico"] .room-quadrant {
+    background-image: var(--img-interiores-rustico);
 }
 
 /* Posicionamiento de cada cuadrante dentro del collage 2x2 */

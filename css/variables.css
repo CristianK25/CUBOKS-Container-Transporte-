@@ -21,6 +21,7 @@
 
     /* Rutas de Imágenes - Interiores (Collages 2x2) */
     --img-interiores-moderno: url('../assets/img/interiores/moderno-collage.jpg');
-    --img-interiores-industrial: url('../assets/img/interiores/industrial-collage.jpg');
-    --img-interiores-minimalista: url('../assets/img/interiores/minimalista-collage.jpg');
+    --img-interiores-rustico: url('../assets/img/interiores/rustico-collage.jpeg');
+    --img-interiores-minimalista: url('../assets/img/interiores/minimalista-collage.jpeg');
+    --img-interiores-oficina: url('../assets/img/interiores/oficina-collage.jpeg');
 }
