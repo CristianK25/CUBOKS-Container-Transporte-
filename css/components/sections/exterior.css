@@ -47,7 +47,7 @@
     width: 100%;
 }
 
-/* Tarjeta Individual */
+/* Tarjeta Individual - SIN ESPACIO EXTRA */
 .exterior-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
@@ -56,6 +56,8 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .exterior-card:hover {
@@ -72,6 +74,7 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: rgba(0, 0, 0, 0.3);
+    display: block;
 }
 
 .exterior-image img {
@@ -80,15 +83,16 @@
     object-fit: cover;
     object-position: center;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
 }
 
 .exterior-card:hover .exterior-image img {
     transform: scale(1.08);
 }
 
-/* Título de la Tarjeta - MÁS GRANDE */
+/* Título de la Tarjeta - DESHABILITADO (sin títulos en HTML)
 .exterior-title {
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: #ffffff;
@@ -101,6 +105,7 @@
         transparent
     );
 }
+*/
 
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
@@ -146,10 +151,10 @@
         aspect-ratio: 4 / 3;
     }
 
-    .exterior-title {
+    /* .exterior-title {
         font-size: 1.25rem;
-        padding: 1.5rem;
-    }
+        padding: 1rem;
+    } */
 }
 
 /* Animación de entrada (opcional - requiere scroll observer) */
