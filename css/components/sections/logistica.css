@@ -15,12 +15,12 @@
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
     margin-bottom: 1rem;
 }
 
 .section-header p {
-    color: var(--text-secondary, #a0a0a0);
+    color: var(--text-body); /* Gris claro */
     font-size: 1.2rem;
 }
 

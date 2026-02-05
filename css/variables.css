@@ -1,20 +1,42 @@
 :root {
-    /* Paleta de Colores Principal */
-    --bg-primary: #111525;
-    --text-primary: #8ee3c3;
-    --bg-body: var(--bg-primary);
-    --text-secondary: #a0a0a0;
+    /* ============================================
+       1. BASES (Fondos)
+       ============================================ */
+    --bg-body: #111525;        /* Fondo principal azul oscuro */
+    --bg-surface: rgba(255, 255, 255, 0.05); /* Para tarjetas (antes hardcoded) */
+    --bg-surface-hover: rgba(255, 255, 255, 0.08);
     
-    /* Acentos (Basado en Instrucciones) */
-    --accent-color: #00ff88; /* Verde neón placeholder, ajustable */
+    /* ============================================
+       2. TEXTOS (Jerarquía de Lectura)
+       ============================================ */
+    --text-heading: #ffffff;   /* Títulos BLANCOS (Crucial) */
+    --text-body: #cbd5e1;      /* Párrafos Gris Azulado Claro (Descansa la vista) */
+    --text-muted: #94a3b8;     /* Textos secundarios / specs */
+    --text-inverse: #0f172a;   /* Texto oscuro para botones verdes */
     
-    /* Tipografía */
-    /* Tipografía */
+    /* ============================================
+       3. ACCIÓN Y MARCA (Solo para destacar)
+       ============================================ */
+    --accent: #8ee3c3;         /* Verde menta original */
+    --accent-hover: #6dd6b0;   /* Un poco más oscuro para hover */
+    --highlight: #00E676;      /* Verde vibrante para CTA principal */
+    
+    /* ============================================
+       4. BORDES
+       ============================================ */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-accent: rgba(142, 227, 195, 0.3);
+    
+    /* ============================================
+       5. TIPOGRAFÍA
+       ============================================ */
     --font-main: "Segoe UI", system-ui, -apple-system, sans-serif;
     --font-heading: var(--font-main);
     --font-body: var(--font-main);
 
-    /* Layout & Spacing */
+    /* ============================================
+       6. LAYOUT & SPACING
+       ============================================ */
     --container-width: 1200px;
     --gutter: 1.5rem; /* Margen mínimo a los lados en móviles */
     --section-spacing: 8rem; /* Espaciado vertical entre secciones */

@@ -24,7 +24,7 @@
 
 .exteriores-section .section-header p {
     font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--text-secondary);
+    color: var(--text-body); /* Gris claro */
     max-width: 600px;
     margin: 0 auto;
 }
@@ -54,9 +54,9 @@
 
 /* Tarjeta Individual - SIN ESPACIO EXTRA */
 .exterior-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-surface); /* Variable */
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light); /* Variable */
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;

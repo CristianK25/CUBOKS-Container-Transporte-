@@ -15,13 +15,13 @@
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--text-heading); /* Blanco */
 }
 
 .interiors-section .section-subtitle {
     text-align: center;
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--text-body); /* Gris claro */
     max-width: 600px;
     margin: 0 auto 3rem;
 }
@@ -50,7 +50,7 @@
 .quad-card {
     width: 100%;
     max-width: 600px; /* Reducido para fit en viewport */
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-surface); /* Variable */
     border-radius: 12px;
     overflow: hidden;
     position: absolute; /* Para superponer slides */
@@ -90,7 +90,7 @@
 
 .quad-card-header h3 {
     font-size: 1.5rem;
-    color: var(--text-primary);
+    color: var(--text-heading); /* Blanco */
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -236,10 +236,10 @@
 }
 
 .carousel-btn:hover {
-    background: var(--accent-color);
-    color: #000;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    background: var(--accent); /* Verde */
+    color: var(--text-inverse); /* Texto oscuro */
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(142, 227, 195, 0.4);
 }
 
 .carousel-btn.prev {
@@ -269,9 +269,9 @@
 }
 
 .indicator-dot.active {
-    background: var(--accent-color);
+    background: var(--accent); /* Verde */
     transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 10px rgba(142, 227, 195, 0.4);
 }
 
 .indicator-dot:hover {

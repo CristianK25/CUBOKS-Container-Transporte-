@@ -28,7 +28,7 @@
 /* Cuando bajamos, se pone oscuro y se achica un poco */
 .navbar.scrolled {
     /* Glassmorphism Effect */
-    background-color: color-mix(in srgb, var(--bg-body, #111525), transparent 15%); /* Opacidad del 85% */
+    background-color: color-mix(in srgb, var(--bg-body), transparent 15%); /* Opacidad del 85% */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     
@@ -45,7 +45,7 @@
 }
 
 .nav-links a {
-    color: var(--text-primary);
+    color: var(--text-body); /* Gris claro por defecto */
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9rem;
@@ -54,19 +54,20 @@
 }
 
 .nav-links a:hover {
-    color: white;
+    color: var(--accent); /* Verde solo en hover */
 }
 
 /* Botón CTA destacado */
 .nav-links .btn-cta {
-    background-color: var(--text-primary); /* Usando el verde menta definido */
-    color: var(--bg-primary); /* Texto oscuro para contraste */
+    background-color: var(--accent); /* Verde menta */
+    color: var(--text-inverse); /* Texto oscuro para contraste */
     padding: 0.6rem 1.5rem;
     border-radius: 4px;
     font-weight: 700;
+    transition: background-color 0.3s ease;
 }
 
 .nav-links .btn-cta:hover {
-    filter: brightness(1.1);
-    color: var(--bg-primary); /* Mantener contraste */
+    background-color: var(--accent-hover);
+    color: var(--text-inverse); /* Mantener contraste */
 }

@@ -6,7 +6,7 @@
 .habitacional h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
 }
 
 .habitacional-grid {
@@ -18,8 +18,8 @@
 }
 
 .habitacional-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-surface); /* Variable */
+    border: 1px solid var(--border-light); /* Variable */
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -39,12 +39,12 @@
 .habitacional-card h3 {
     font-size: 1.75rem;
     margin: 2rem 1.5rem 1rem;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
 }
 
 .habitacional-card p {
     font-size: 1.125rem;
     line-height: 1.6;
     padding: 0 1.5rem 2.5rem;
-    color: var(--text-secondary, #a0a0a0);
+    color: var(--text-body); /* Gris claro */
 }

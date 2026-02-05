@@ -9,7 +9,7 @@
     font-size: 2.5rem;
     margin-bottom: 3rem;
     text-align: center;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
 }
 
 /* Grid de dos columnas */
@@ -60,7 +60,7 @@
     top: 0;
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--accent); /* Verde para chevron */
     transition: transform 0.3s ease;
     transform: rotate(0deg);
 }
@@ -70,7 +70,7 @@
 }
 
 .accordion summary:hover {
-    color: var(--text-primary, #8ee3c3);
+    color: var(--accent); /* Verde en hover */
 }
 
 .accordion summary::-webkit-details-marker {

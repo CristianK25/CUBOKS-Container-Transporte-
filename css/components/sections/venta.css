@@ -8,7 +8,7 @@
 .venta h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
 }
 
 .venta-grid {
@@ -23,8 +23,8 @@
    TARJETA DE PRODUCTO
    ======================================== */
 .venta-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-surface); /* Variable en lugar de hardcoded */
+    border: 1px solid var(--border-light); /* Variable en lugar de hardcoded */
     border-radius: 16px;
     overflow: hidden; /* Necesario para la cinta diagonal */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -35,8 +35,9 @@
 
 .venta-card:hover {
     transform: translateY(-8px);
+    background: var(--bg-surface-hover);
     box-shadow: 0 15px 40px rgba(142, 227, 195, 0.25);
-    border-color: rgba(142, 227, 195, 0.3);
+    border-color: var(--border-accent); /* Variable en lugar de hardcoded */
 }
 
 .venta-card img {
@@ -87,14 +88,14 @@
 .venta-card h3 {
     font-size: 1.6rem;
     margin: 0 0 0.5rem 0;
-    color: var(--text-primary, #8ee3c3);
+    color: var(--text-heading); /* Blanco */
     font-weight: 600;
 }
 
 .card-description {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: var(--text-secondary, #a0a0a0);
+    color: var(--text-body); /* Gris claro */
     margin-bottom: 1.5rem;
 }
 
@@ -122,14 +123,14 @@
 .spec-icon {
     width: 24px;
     height: 24px;
-    color: var(--accent, #8ee3c3);
-    stroke: var(--accent, #8ee3c3);
+    color: var(--accent); /* Verde para íconos */
+    stroke: var(--accent);
     flex-shrink: 0;
 }
 
 .spec-value {
     font-size: 0.8rem;
-    color: var(--text-secondary, #a0a0a0);
+    color: var(--text-muted); /* Gris más suave */
     text-align: center;
     font-weight: 500;
     text-transform: uppercase;
@@ -149,7 +150,7 @@
     display: inline-block;
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--accent, #8ee3c3);
+    color: var(--accent); /* Verde para precios (acento estratégico) */
     letter-spacing: 1px;
 }
 
