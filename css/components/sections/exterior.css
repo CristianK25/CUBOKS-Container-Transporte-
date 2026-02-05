@@ -39,12 +39,17 @@
     padding: 0 1rem;
 }
 
-/* La 5ª Tarjeta - CENTRADA Y GIGANTE */
+/* La 5ª Tarjeta - CENTRADA Y VERTICAL (para imagen "antes y después") */
 .exteriores-grid .exterior-card:nth-child(5) {
     grid-column: 1 / -1;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 600px; /* Reducido para formato vertical */
+    margin: 2rem auto; /* Centrado con margen vertical */
     width: 100%;
+}
+
+/* Cambiar aspect-ratio de la imagen en la última tarjeta a formato vertical */
+.exteriores-grid .exterior-card:nth-child(5) .exterior-image {
+    aspect-ratio: 2 / 3; /* Formato retrato/vertical para imagen "antes y después" */
 }
 
 /* Tarjeta Individual - SIN ESPACIO EXTRA */
@@ -119,10 +124,15 @@
         max-width: min(95%, 1200px);
     }
 
-    /* La quinta tarjeta sigue centrada */
+    /* La quinta tarjeta sigue centrada y vertical */
     .exteriores-grid .exterior-card:nth-child(5) {
         grid-column: 1 / -1;
         max-width: 600px;
+    }
+
+    /* Mantener aspect-ratio vertical en tablet */
+    .exteriores-grid .exterior-card:nth-child(5) .exterior-image {
+        aspect-ratio: 2 / 3;
     }
 }
 
@@ -145,6 +155,11 @@
     .exteriores-grid .exterior-card:nth-child(5) {
         grid-column: 1;
         max-width: 100%;
+    }
+
+    /* Mantener aspect-ratio vertical en móvil para la 5ª tarjeta */
+    .exteriores-grid .exterior-card:nth-child(5) .exterior-image {
+        aspect-ratio: 2 / 3;
     }
 
     .exterior-image {
