@@ -1,0 +1,211 @@
+/* ==========================================
+   SECCIÓN ACABADOS EXTERIORES
+   ========================================== */
+
+.exteriores-section {
+    padding: 6rem 2rem;
+    background: var(--bg-primary);
+    position: relative;
+}
+
+/* Header de la sección */
+.exteriores-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.exteriores-section .section-header h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.exteriores-section .section-header p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid de Tarjetas - 3 + 2 Layout */
+.exteriores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Centrar las últimas 2 tarjetas */
+.exteriores-grid .exterior-card:nth-child(4),
+.exteriores-grid .exterior-card:nth-child(5) {
+    grid-column: span 1;
+}
+
+/* Ajustar el grid para que las últimas 2 estén centradas */
+.exteriores-grid .exterior-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.exteriores-grid .exterior-card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+/* Tarjeta Individual */
+.exterior-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.exterior-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor de Imagen */
+.exterior-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.exterior-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exterior-card:hover .exterior-image img {
+    transform: scale(1.08);
+}
+
+/* Título de la Tarjeta */
+.exterior-title {
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #ffffff);
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+    .exteriores-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .exteriores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    /* Resetear el layout especial en tablet */
+    .exteriores-grid .exterior-card:nth-child(4),
+    .exteriores-grid .exterior-card:nth-child(5) {
+        grid-column: span 1;
+        margin: 0;
+    }
+
+    /* La quinta tarjeta ocupa ambas columnas y se centra */
+    .exteriores-grid .exterior-card:nth-child(5) {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .exteriores-section {
+        padding: 3rem 1rem;
+    }
+
+    .exteriores-section .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .exteriores-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Resetear todos los ajustes especiales */
+    .exteriores-grid .exterior-card:nth-child(4),
+    .exteriores-grid .exterior-card:nth-child(5) {
+        grid-column: 1;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .exterior-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .exterior-title {
+        font-size: 1.125rem;
+        padding: 1.25rem;
+    }
+}
+
+/* Animación de entrada (opcional - requiere scroll observer) */
+.exterior-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.exterior-card:nth-child(1) { animation-delay: 0.1s; }
+.exterior-card:nth-child(2) { animation-delay: 0.2s; }
+.exterior-card:nth-child(3) { animation-delay: 0.3s; }
+.exterior-card:nth-child(4) { animation-delay: 0.4s; }
+.exterior-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accesibilidad */
+.exterior-card:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Mejora para imágenes cargando */
+.exterior-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    z-index: 1;
+}
