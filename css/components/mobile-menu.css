@@ -13,6 +13,11 @@
    ============================================ */
 @media (max-width: 768px) {
     
+    /* Logo más pequeño en móvil */
+    .nav-logo-img {
+        height: 32px; /* Un poco más pequeño en móvil */
+    }
+    
     /* FULL SCREEN OVERLAY MENU - Rompe el flujo del navbar */
     .nav-links {
         /* Posicionamiento: FIJO a la ventana (no al navbar) */
