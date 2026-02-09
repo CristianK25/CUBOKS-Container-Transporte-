@@ -82,17 +82,15 @@ export function initScrollTrigger() {
     console.log(`🎬 ScrollTrigger: Observando ${benefitsElements.length} elementos de benefits`);
 
     // ========================================
-    // SECCIÓN VENTA (Observador específico con threshold más alto)
+    // SECCIÓN VENTA (Observador específico para activación más suave)
     // ========================================
     const ventaObserverOptions = {
         root: null,
-        rootMargin: '-50px 0px -50px 0px', // Se activa cuando está más centrado en viewport
-        threshold: 0.3 // 30% del elemento debe ser visible (vs 10% del observer general)
+        rootMargin: '0px 0px -200px 0px', // Se activa 200px antes del borde inferior del viewport
+        threshold: 0.25 // 25% del elemento debe ser visible
     };
 
     const ventaObserver = new IntersectionObserver(observerCallback, ventaObserverOptions);
-
-    // Observar header (h2 y p) y cards
     const ventaElements = document.querySelectorAll(
         '.venta .section-header h2, .venta .section-header p, .venta-card'
     );
@@ -101,7 +99,7 @@ export function initScrollTrigger() {
         ventaObserver.observe(element);
     });
 
-    console.log(`🎬 ScrollTrigger: Observando ${ventaElements.length} elementos de venta (threshold: 30%)`);
+    console.log(`🎬 ScrollTrigger: Observando ${ventaElements.length} elementos de venta (threshold: 25%, activación suave)`);
 
     // ========================================
     // SECCIÓN CTA
