@@ -91,15 +91,17 @@ export function initScrollTrigger() {
     };
 
     const ventaObserver = new IntersectionObserver(observerCallback, ventaObserverOptions);
+
+    // Solo observar el header (h2 y p), NO las cards
     const ventaElements = document.querySelectorAll(
-        '.venta .section-header h2, .venta .section-header p, .venta-card'
+        '.venta .section-header h2, .venta .section-header p'
     );
 
     ventaElements.forEach(element => {
         ventaObserver.observe(element);
     });
 
-    console.log(`🎬 ScrollTrigger: Observando ${ventaElements.length} elementos de venta (threshold: 25%, activación suave)`);
+    console.log(`🎬 ScrollTrigger: Observando ${ventaElements.length} elementos de venta (solo header)`);
 
     // ========================================
     // SECCIÓN CTA

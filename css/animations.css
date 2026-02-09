@@ -245,10 +245,9 @@
    VENTA SECTION (Activada con scroll)
    ============================================ */
 
-/* Estado inicial: elementos ocultos */
+/* Estado inicial: solo header oculto */
 .venta .section-header h2,
-.venta .section-header p,
-.venta-card {
+.venta .section-header p {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -256,13 +255,12 @@
 
 /* Estado visible: cuando JS agrega la clase .visible */
 .venta .section-header h2.visible,
-.venta .section-header p.visible,
-.venta-card.visible {
+.venta .section-header p.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Delays específicos para cada elemento */
+/* Delays específicos para el header */
 /* Primero: Título */
 .venta .section-header h2 {
     transition-delay: 0s;
@@ -273,20 +271,8 @@
     transition-delay: 0.2s;
 }
 
-/* Tercero: Primera card (20ft) */
-.venta-grid > .venta-card:nth-child(1) {
-    transition-delay: 0.4s;
-}
+/* Las cards NO tienen animación - siempre visibles */
 
-/* Cuarto: Segunda card (40ft - Más Vendido) */
-.venta-grid > .venta-card:nth-child(2) {
-    transition-delay: 0.6s;
-}
-
-/* Quinto: Tercera card (High Cube) */
-.venta-grid > .venta-card:nth-child(3) {
-    transition-delay: 0.8s;
-}
 
 /* ============================================
    COMPARATIVA SECTION (Activada con scroll)
