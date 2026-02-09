@@ -29,12 +29,12 @@
     margin: 0 auto;
 }
 
-/* Grid de Tarjetas - 2 COLUMNAS */
+/* Grid de Tarjetas - 2 COLUMNAS MÁS GRANDES */
 .interiores-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    max-width: min(90%, 1600px);
+    gap: 3rem;
+    max-width: min(95%, 2000px);
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -79,7 +79,7 @@
 }
 
 .interior-card:hover .interior-image img {
-    transform: scale(1.08);
+    transform: scale(1.03);
 }
 
 /* Responsive - Tablet */
