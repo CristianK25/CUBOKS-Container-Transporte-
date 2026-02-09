@@ -4,7 +4,7 @@
     width: 100%;
     
     /* Configuración de la imagen de fondo */
-    background-image: url('../../assets/img/hero-bg.jpeg'); /* Reemplazar con tu imagen */
+    background-image: url('/assets/img/hero-bg.jpeg'); /* Imagen de fondo del hero */
     background-size: cover; /* Escala la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat;

@@ -42,15 +42,15 @@
     --section-spacing: 8rem; /* Espaciado vertical entre secciones */
 
     /* Rutas de Imágenes - Interiores (Collages 2x2) */
-    --img-interiores-moderno: url('../assets/img/interiores/moderno-collage.jpg');
-    --img-interiores-rustico: url('../assets/img/interiores/rustico-collage.jpeg');
-    --img-interiores-minimalista: url('../assets/img/interiores/minimalista-collage.jpeg');
-    --img-interiores-oficina: url('../assets/img/interiores/oficina-collage.jpeg');
+    --img-interiores-moderno: url('/assets/img/interiores/moderno-collage.jpg');
+    --img-interiores-rustico: url('/assets/img/interiores/rustico-collage.jpeg');
+    --img-interiores-minimalista: url('/assets/img/interiores/minimalista-collage.jpeg');
+    --img-interiores-oficina: url('/assets/img/interiores/oficina-college.jpeg');
 
     /* Rutas de Imágenes - Acabados Exteriores */
-    --img-exterior-1: url('../assets/img/exteriores/exterior_1.jpeg');
-    --img-exterior-2: url('../assets/img/exteriores/exterior_2.jpeg');
-    --img-exterior-3: url('../assets/img/exteriores/exterior_3.jpeg');
-    --img-exterior-4: url('../assets/img/exteriores/exterior_4.jpeg');
-    --img-exterior-5: url('../assets/img/exteriores/exterior_5.jpeg');
+    --img-exterior-1: url('/assets/img/exteriores/exterior_1.jpeg');
+    --img-exterior-2: url('/assets/img/exteriores/exterior_2.jpeg');
+    --img-exterior-3: url('/assets/img/exteriores/exterior_3.jpeg');
+    --img-exterior-4: url('/assets/img/exteriores/exterior_4.jpeg');
+    --img-exterior-5: url('/assets/img/exteriores/exterior_5.jpeg');
 }
