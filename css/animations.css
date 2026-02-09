@@ -220,6 +220,106 @@
 }
 
 /* ============================================
+   BENEFITS SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: tarjetas ocultas */
+.benefits article {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.benefits article.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays escalonados para cada tarjeta */
+.benefits article:nth-child(1) { transition-delay: 0.1s; }
+.benefits article:nth-child(2) { transition-delay: 0.2s; }
+.benefits article:nth-child(3) { transition-delay: 0.3s; }
+
+/* ============================================
+   VENTA SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: header y cards ocultas */
+.venta .section-header h2,
+.venta .section-header p,
+.venta-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.venta .section-header h2.visible,
+.venta .section-header p.visible,
+.venta-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays específicos para cada elemento */
+/* Primero: Título */
+.venta .section-header h2 {
+    transition-delay: 0s;
+}
+
+/* Segundo: Descripción */
+.venta .section-header p {
+    transition-delay: 0.2s;
+}
+
+/* Tercero en adelante: Cards escalonadas */
+.venta-card:nth-child(1) { transition-delay: 0.4s; }
+.venta-card:nth-child(2) { transition-delay: 0.6s; }
+.venta-card:nth-child(3) { transition-delay: 0.8s; }
+
+/* ============================================
+   COMPARATIVA SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: filas ocultas */
+.comp-row.reveal {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.comp-row.reveal.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delays escalonados para cada fila */
+.comp-row.reveal:nth-child(2) { transition-delay: 0.1s; } /* Primera fila de datos */
+.comp-row.reveal:nth-child(3) { transition-delay: 0.2s; }
+.comp-row.reveal:nth-child(4) { transition-delay: 0.3s; }
+.comp-row.reveal:nth-child(5) { transition-delay: 0.4s; }
+.comp-row.reveal:nth-child(6) { transition-delay: 0.5s; }
+
+/* ============================================
+   CTA SECTION (Activada con scroll)
+   ============================================ */
+
+/* Estado inicial: sección oculta */
+.cta-section {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Estado visible: cuando JS agrega la clase .visible */
+.cta-section.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============================================
    LIGHTBOX MODAL
    ============================================ */
 
