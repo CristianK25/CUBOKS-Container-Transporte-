@@ -228,3 +228,44 @@
     to { transform: scale(1); opacity: 1; }
 }
 
+/* ============================================
+   SECCIÓN ACABADOS EXTERIORES
+   ============================================ */
+
+/* Animación de entrada para tarjetas de exteriores */
+.exterior-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.exterior-card:nth-child(1) { animation-delay: 0.1s; }
+.exterior-card:nth-child(2) { animation-delay: 0.2s; }
+.exterior-card:nth-child(3) { animation-delay: 0.3s; }
+.exterior-card:nth-child(4) { animation-delay: 0.4s; }
+.exterior-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============================================
+   SECCIÓN ACABADOS INTERIORES
+   ============================================ */
+
+/* Animación de entrada para tarjetas de interiores */
+.interior-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.interior-card:nth-child(1) { animation-delay: 0.1s; }
+.interior-card:nth-child(2) { animation-delay: 0.2s; }
+.interior-card:nth-child(3) { animation-delay: 0.3s; }
+.interior-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* ============================================
+   LOGÍSTICA - LIGHTBOX
+   ============================================ */
+
+/* Animación para imágenes del lightbox */
+.lightbox-image {
+    animation: zoomIn 0.3s ease;
+}

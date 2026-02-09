@@ -240,7 +240,6 @@
     object-fit: contain;
     border-radius: 4px;
     box-shadow: 0 0 50px rgba(0,0,0,0.5);
-    animation: zoomIn 0.3s ease;
 }
 
 
