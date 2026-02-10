@@ -1,0 +1,60 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # 1. Redirigir www a no-www (Mejor para SEO y consistencia)
+  RewriteCond %{HTTP_HOST} ^www\.cuboks\.ar$ [NC]
+  RewriteRule ^(.*)$ https://cuboks.ar/$1 [R=301,L]
+  
+  # 2. Forzar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # 3. SPA Routing (La parte crítica para Vite)
+  # Si el archivo o carpeta solicitada NO existe, manda al index.html
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Compresión GZIP (Acelera la carga)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache del navegador (Mejor rendimiento para quien vuelve a visitar)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Seguridad: Evita que la gente vea la lista de archivos de tus carpetas
+Options -Indexes
+
+# Seguridad: Proteger archivos sensibles que empiezan con punto (.env, .git)
+# PERO permite la carpeta .well-known para que el SSL de DonWeb se renueve solo
+<IfModule mod_authz_core.c>
+    <FilesMatch "^\.">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+    <FilesMatch "^\.">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+# Excepción vital para el SSL de DonWeb
+<IfModule mod_rewrite.c>
+    RewriteRule ^\.well-known/ - [L,NC]
+</IfModule>
