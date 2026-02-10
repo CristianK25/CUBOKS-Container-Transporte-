@@ -123,9 +123,20 @@
     aspect-ratio: 16/9; /* Mantiene proporción cinematográfica */
 }
 
-.step-visual:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(142, 227, 195, 0.15);
+/* Efectos hover solo en dispositivos con hover (desktop) */
+@media (hover: hover) {
+    .step-visual:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(142, 227, 195, 0.15);
+    }
+    
+    .step-visual:hover img {
+        transform: scale(1.1);
+    }
+    
+    .step-visual:hover .overlay {
+        opacity: 1;
+    }
 }
 
 .step-visual img {
@@ -133,10 +144,6 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-}
-
-.step-visual:hover img {
-    transform: scale(1.1);
 }
 
 /* Overlay "Ver Galería" */
@@ -153,8 +160,12 @@
     backdrop-filter: blur(2px);
 }
 
-.step-visual:hover .overlay {
-    opacity: 1;
+/* En dispositivos táctiles, mostrar overlay permanentemente pero más sutil */
+@media (hover: none) {
+    .step-visual .overlay {
+        opacity: 0.7;
+        background: rgba(0, 0, 0, 0.3);
+    }
 }
 
 .icon-camera {
@@ -220,8 +231,11 @@
     transition: color 0.3s;
 }
 
-.close-lightbox:hover {
-    color: var(--text-primary);
+/* Hover solo en dispositivos con hover */
+@media (hover: hover) {
+    .close-lightbox:hover {
+        color: var(--text-primary);
+    }
 }
 
 /* Contenido Central */
@@ -242,8 +256,6 @@
     box-shadow: 0 0 50px rgba(0,0,0,0.5);
 }
 
-
-
 /* Botones Navegación */
 .nav-btn {
     background: rgba(255, 255, 255, 0.1);
@@ -255,12 +267,26 @@
     border-radius: 50%;
     transition: background 0.3s, transform 0.2s;
     user-select: none;
+    min-width: 44px;  /* Tamaño mínimo táctil */
+    min-height: 44px;
 }
 
-.nav-btn:hover {
-    background: var(--text-primary);
-    color: var(--bg-body);
-    transform: scale(1.1);
+/* Hover solo en dispositivos con hover */
+@media (hover: hover) {
+    .nav-btn:hover {
+        background: var(--text-primary);
+        color: var(--bg-body);
+        transform: scale(1.1);
+    }
+}
+
+/* En dispositivos táctiles, feedback visual al tocar */
+@media (hover: none) {
+    .nav-btn:active {
+        background: var(--text-primary);
+        color: var(--bg-body);
+        transform: scale(0.95);
+    }
 }
 
 /* Caption (Contador) */
@@ -271,18 +297,69 @@
     font-family: inherit;
 }
 
-/* Responsive Modal */
+/* Responsive Modal - MÓVIL */
 @media (max-width: 768px) {
+    /* Reorganizar layout: imagen arriba, controles abajo */
+    .lightbox-content {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
+        padding: 1rem;
+        justify-content: flex-start;
+        margin-top: 4rem; /* Espacio para el botón cerrar */
+    }
+    
     .lightbox-image {
-        max-width: 95%;
+        max-width: 100%;
+        max-height: 60vh; /* Dejar espacio para los controles */
+        margin: 0;
+    }
+    
+    /* Botones de navegación debajo de la imagen */
+    .nav-btn {
+        position: static; /* Quitar posicionamiento absoluto */
+        font-size: 1.5rem;
+        padding: 1.2rem;
+        min-width: 56px;  /* Tamaño táctil más grande */
+        min-height: 56px;
+        flex-shrink: 0;
+    }
+    
+    /* Contenedor para los botones en fila */
+    .lightbox-content::after {
+        content: '';
+        display: none; /* No necesitamos pseudo-elemento */
+    }
+    
+    /* Ajustar el caption */
+    .lightbox-caption {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        order: 3; /* Asegurar que esté al final */
+    }
+    
+    /* Botón cerrar más accesible en móvil */
+    .close-lightbox {
+        top: 15px;
+        right: 15px;
+        font-size: 2.5rem;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .lightbox-image {
+        max-height: 50vh;
     }
     
     .nav-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        font-size: 1.3rem;
+        padding: 1rem;
+        min-width: 50px;
+        min-height: 50px;
     }
-    
-    .prev-btn { left: 10px; }
-    .next-btn { right: 10px; }
 }
+
