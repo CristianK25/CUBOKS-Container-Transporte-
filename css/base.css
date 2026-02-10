@@ -16,6 +16,11 @@ html, body {
     color: var(--text-body); /* Texto gris claro, NO verde */
 }
 
+/* Desplazamiento suave para todos los enlaces de anclaje */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Opcional: Estilos base para enlaces */
 a {
     color: inherit;
