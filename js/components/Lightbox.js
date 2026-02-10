@@ -1,15 +1,25 @@
+// Importar imágenes explícitamente para que Vite las incluya en el build
+import paso1Main from '../../assets/img/logistica/paso1_main.jpeg';
+import paso1_2 from '../../assets/img/logistica/paso1_2.jpeg';
+import paso1_3 from '../../assets/img/logistica/paso1_3.jpeg';
+import paso1_4 from '../../assets/img/logistica/paso1_4.jpeg';
+import paso2Main from '../../assets/img/logistica/paso2_main.jpeg';
+import paso2_2 from '../../assets/img/logistica/paso2_2.jpeg';
+import paso2_3 from '../../assets/img/logistica/paso2_3.jpeg';
+import paso2_4 from '../../assets/img/logistica/paso2_4.jpeg';
+
 const galleries = {
     transporte: [
-        'assets/img/logistica/paso1_main.jpeg',
-        'assets/img/logistica/paso1_2.jpeg',
-        'assets/img/logistica/paso1_3.jpeg',
-        'assets/img/logistica/paso1_4.jpeg'
+        paso1Main,
+        paso1_2,
+        paso1_3,
+        paso1_4
     ],
     instalacion: [
-        'assets/img/logistica/paso2_main.jpeg',
-        'assets/img/logistica/paso2_2.jpeg',
-        'assets/img/logistica/paso2_3.jpeg',
-        'assets/img/logistica/paso2_4.jpeg'
+        paso2Main,
+        paso2_2,
+        paso2_3,
+        paso2_4
     ],
     // Galerías de Interiores (collages completos)
     'interiores-moderno': [
